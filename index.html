@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,61 +12,47 @@
 
   <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- ✨ Phase 2 Animation Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 </head>
 
 <body>
-  <!-- Right-side navigation -->
   <nav class="project-nav">
     <h4>Projects</h4>
     <a href="#dronechat" id="lnk-dronechat">DroneShield Chatbot</a>
     <a href="#annotation" id="lnk-annotation">AI Data Annotation</a>
-    <a href="#rfautoencoder" id="lnk-rfautoencoder">AI Autoencoder RF Anomaly Detection</a>
-    <a href="#sqldatabase" id="lnk-sqldatabase">SQL Training DB</a>
-    <a href="#marketinfo" id="lnk-marketinfo">Market Email Automation</a>
-    <a href="#customersolutions" id="lnk-customersolutions">Customer Solutions KB</a>
-    <a href="#dispatchingtool" id="lnk-dispatchingtool">Dispatching Automation Tool</a>
-    <a href="#rfenvironment" id="lnk-rfenvironment">RF Environment Simulation (coming soon)</a>
-    <a href="#dataanalysis" id="lnk-dataanalysis">Data Analysis (coming soon)</a>
-    <a href="#salesflier" id="lnk-salesflier">Sales/Marketing Flier (coming soon)</a>
+    <a href="#rfautoencoder" id="lnk-rfautoencoder">RF Autoencoder</a>
+    <a href="#sqldatabase" id="lnk-sqldatabase">SQL DB</a>
+    <a href="#marketinfo" id="lnk-marketinfo">Market Automation</a>
+    <a href="#customersolutions" id="lnk-customersolutions">Customer Solutions</a>
+    <a href="#dispatchingtool" id="lnk-dispatchingtool">Dispatching Tool</a>
   </nav>
 
   <main class="wrap">
-    <h1>Timothy Lonergan — AI & Automation Portfolio</h1>
-    <p class="subtitle">Projects showcasing automation, AI integration, and applied problem solving.</p>
+    <h1 class="scene">Timothy Lonergan — AI & Automation Portfolio</h1>
+    <p class="subtitle scene">Projects showcasing automation, AI integration, and applied problem solving.</p>
 
-    <!-- ABOUT -->
-    <section class="card" id="about">
-      <h2>About Me</h2>
-      <p>I’m an AI and automation enthusiast with a background in customer operations management,
-      process design, data analysis, and workforce management. This portfolio highlights my transition into AI through applied projects like autonomous chatbots, data annotation pipelines, and real-time information retrieval systems inspired by the C-UAS space I’ve followed for over five years.</p>
-    </section>
-
-    <!-- PROJECT SECTIONS -->
-    <!-- All content & image filenames remain identical to your baseline -->
-    <!-- ↓ Example (DroneShield Chatbot) -->
-    <section id="dronechat" class="card project">
+    <section class="card project scene" id="dronechat">
       <h3>DroneShield AI Chatbot</h3>
-      <p>Custom chatbot leveraging OpenAI’s GPT-4 and retrieval logic to answer company-specific questions from DroneShield’s public website.</p>
+      <p>Custom chatbot leveraging OpenAI GPT-4 and retrieval logic to answer company-specific questions from DroneShield’s public website.</p>
       <div class="buttons">
         <a class="btn" href="https://tims-droneshield-chatbot.streamlit.app/" target="_blank">Open Live App</a>
         <a class="btn" href="./AI_Chatbot_Key_Takeaways.pdf" target="_blank">Project Notes</a>
         <a class="btn secondary" href="https://github.com/ProjectsforTim/Chatbot" target="_blank">View Source</a>
       </div>
-      <img class="screenshot" id="chatbotDemo" src="./chatbotdemo.png" alt="DroneShield Chat demo">
+      <img class="screenshot" src="./chatbotdemo.png" alt="DroneShield Chat demo">
     </section>
 
-    <!-- Repeat the rest of your project sections exactly as in baseline -->
-    <!-- annotation / rfautoencoder / sqldatabase / etc. -->
+    <!-- Add your other project <section class="card project scene" id="..."> blocks here -->
 
-    <section style="text-align:center;margin-top:40px;">
+    <section style="text-align:center;margin-top:40px;" class="scene">
       <a class="linkedin-btn" href="https://www.linkedin.com/in/timothy-lonergan-2b6156197" target="_blank">Connect on LinkedIn</a>
     </section>
-    <footer class="muted">© 2025 Timothy Lonergan | AI & Automation Portfolio</footer>
+    <footer class="muted scene">© 2025 Timothy Lonergan | AI & Automation Portfolio</footer>
   </main>
-
-  <!-- Drone layers (kept for later activation) -->
-  <div class="drone-follower-wrapper"></div>
-  <div class="drone-follower-left-wrapper"></div>
 
   <script src="assets/js/main.js" defer></script>
 </body>
