@@ -47,114 +47,342 @@
 
   <main class="wrap">
     <h1 class="scene">Timothy Lonergan — AI & Automation Portfolio</h1>
-    <p class="subtitle scene">Projects showcasing automation, AI integration, and applied problem solving.</p>
+   <p class="subtitle">Projects showcasing automation, AI integration, and applied problem solving.</p>
 
-    <!-- 1️⃣ DroneShield Chatbot -->
-    <section class="card project scene" id="dronechat">
+    <!-- ABOUT -->
+    <section class="card">
+      <h2>About Me</h2>
+      <p>
+      I’m an AI and automation enthusiast with a background in customer operations management,
+        process design, data analysis, and workforce management. I focus on building intelligent tools
+        that improve efficiency, accuracy, and access to knowledge. This portfolio highlights my
+        transition into AI through applied projects like autonomous chatbots, data annotation pipelines,
+        and real-time information retrieval systems. These projects were largely inspired by the C-UAS space which I have been quietly following for over 5 years.
+      </p>
+    </section>
+
+    <!-- PROJECT 1 -->
+    <section id="dronechat" class="card project">
+      <div style="display:flex; justify-content:center; align-items:center; margin:16px 0;">
+        <img src="./droneshield_logo.png" alt="DroneShield Logo" class="logo-centered">
+      </div>
+      <style>
+        .logo-centered { height: 50px; filter: drop-shadow(0 0 25px rgba(255,122,0,0.7)); transition: all 0.4s ease-in-out; }
+        .logo-centered:hover { transform: scale(1.05); filter: drop-shadow(0 0 40px rgba(255,180,80,0.9)); }
+      </style>
       <h3>DroneShield AI Chatbot</h3>
-      <p>Custom GPT-4 chatbot trained on DroneShield’s website to answer company-specific product and capability questions.</p>
+      <p>
+        A custom chatbot leveraging OpenAI’s GPT-4 and light retrieval to answer company-specific questions
+        from DroneShield’s public website. Built with Streamlit and a branded UI, it falls back to verified
+        external info when context is missing.
+      </p>
       <div class="buttons">
-        <a class="btn" href="https://tims-droneshield-chatbot.streamlit.app/" target="_blank">Open Live App</a>
-        <a class="btn" href="./AI_Chatbot_Key_Takeaways.pdf" target="_blank">Project Notes</a>
-        <a class="btn secondary" href="https://github.com/ProjectsforTim/Chatbot" target="_blank">View Source</a>
+        <a class="btn" href="https://tims-droneshield-chatbot.streamlit.app/" target="_blank" rel="noopener">Open Live App</a>
+        <a class="btn" href="./AI_Chatbot_Key_Takeaways.pdf" target="_blank" rel="noopener">Project Notes</a>
+        <a class="btn secondary" href="https://github.com/ProjectsforTim/Chatbot" target="_blank" rel="noopener">View Source</a>
       </div>
-      <img class="screenshot" src="./chatbotdemo.png" alt="DroneShield Chat demo">
-    </section>
 
-    <!-- 2️⃣ AI Data Annotation -->
-    <section class="card project scene" id="annotation">
-      <h3>AI Data Annotation — Long-Range Drone Detection V2</h3>
-      <p>Manually labeled and augmented dataset of civilian UAV imagery for object detection model training. Trained with YOLOv8 achieving mAP@0.5 = 0.979 on 1,200 annotated images.</p>
+      <img class="screenshot" id="chatbotDemo" src="./chatbotdemo.png" alt="DroneShield Chat demo screenshot">
+
+      <details style="margin-top:18px;">
+        <summary style="cursor:pointer;font-weight:600;color:#ffbb55;padding:8px 0;">📄 Preview Project Notes PDF</summary>
+        <div style="margin-top:10px;">
+          <iframe
+            src="./AI_Chatbot_Key_Takeaways.pdf#view=FitH"
+            width="100%" height="500px"
+            style="border-radius:12px; box-shadow:0 0 25px rgba(255,122,0,0.4); border:none;"></iframe>
+        </div>
+      </details>
+
+      <div class="skills">
+        <strong>Demonstrated Skills:</strong>
+        <span data-tooltip="Crafting precise, context-aware instructions for GPT models.">Prompt Engineering</span>
+        <span data-tooltip="Building dynamic web apps quickly using Python.">Streamlit</span>
+        <span data-tooltip="Programming for automation, data handling, and integration.">Python</span>
+        <span data-tooltip="Using vector databases for document-aware AI answers.">RAG (Retrieval-Augmented Generation)</span>
+        <span data-tooltip="Connecting OpenAI APIs for text and reasoning workflows.">OpenAI API Integration</span>
+      </div>
+    </section>
+       <!-- PROJECT 2 -->
+    <section id="annotation" class="card project">
+  <div style="display:flex; justify-content:center; align-items:center; margin:16px 0;">
+    <img src="./Robologo.png" alt="Roboflow Logo" class="logo">
+  </div>
+  <h3>AI Data Annotation and Object Detection Model V2</h3>
+  <p>
+    Developed a Roboflow-powered image annotation project to train two custom object detection models for drones. Model V1 included 200 high-quality annotations, while Model V2 significantly expanded the dataset and annotation quality with over 1,200 images and over 2,000 annotations.
+    <br><br>
+    • <b>Model V1:</b> Precision <span style="color:#ff8000;">0.948</span> | Recall <span style="color:#ff8000;">0.744</span> | mAP@0.5 <span style="color:#ff8000;">0.92</span> | mAP@0.5–0.95 <span style="color:#ff8000;">0.68</span><br>
+    • <b>Model V2:</b> Precision <span style="color:#ff8000;">0.983</span> | Recall <span style="color:#ff8000;">0.97</span> | mAP@0.5 <span class="glow-number">0.979</span> | mAP@0.5–0.95 <span style="color:#ff8000;">0.795</span>
+  </p>
+<details class="performance-details">
+  <summary>📊 What does it all mean?</summary>
+  <div class="metrics">
+  <p>
+    <b>Precision:</b> <span class="metric">0.983</span> — Percentage of detected drones that were correctly identified.<br>
+    <b>Recall:</b> <span class="metric">0.97</span> — Percentage of all drones in the dataset that the model successfully detected.<br>
+    <b>mAP@0.5:</b> <span class="metric">0.979</span> — Model accuracy when predicted bounding boxes overlap the actual boxes by at least 50%.<br>
+    <b>mAP@0.5–0.95:</b> <span class="metric">0.795</span> — Average accuracy across multiple overlap thresholds (50%–95%), representing overall robustness.
+  </p>
+</div>
+  </div>
+</details>
+  <div class="buttons">
+    <a class="btn" href="./AI_Object_Detection_Model_Key_Takeaways.pdf" target="_blank" rel="noopener">
+      Project Results (Model V1)
+    </a>
+    <a class="btn shimmer" href="./AI_Object_Detection_Model_Key_Takeaways_V2.pdf" target="_blank" rel="noopener">Project Results (Model V2)</a>
+    <a class="btn secondary" href="https://github.com/ProjectsforTim/Drone_Threat_Detection_V1" target="_blank" rel="noopener">View Source (Model V1)</a>
+     <a class="btn secondary" href="https://github.com/ProjectsforTim/Drone_Threat_Detection_V2" target="_blank" rel="noopener">View Source (Model V2)</a>
+  </div>
+
+  <img class="screenshot visible" id="mAPResultcomparrison" src="./MAPV1vsV2.png" alt="Model Accuracy Results2 (mAP@0.5v2andV1)">
+  <p class="caption">mAP@0.5 comparison between Model V1 and V2 — V2 clearly outperforms in all metrics, especially with early learning, peaking at 0.979 by epoch 165.</p>
+
+  <img class="screenshot visible" id="mAPResult2" src="./MAPV2.png" alt="Model Accuracy Results2 (mAP@0.5v2)">
+  <p class="caption">Model V2 reached mAP@0.5 values by epoch 13 that V1 didn’t reach until epoch 30 — achieving 0.979 with 1.2k images, rivaling much larger datasets.</p>
+
+  <img class="screenshot visible" id="mAPResult" src="./mAP0.5.png" alt="Model Accuracy Results (mAP@0.5)">
+  <p class="caption">Model V1 performed impressively for its 200-image dataset, peaking at mAP@0.5 = 0.92 over 50 epochs.</p>
+
+  <img class="screenshot visible" id="Drone_Annotation" src="./Drone_Annotation.png" alt="Drone Annotation screenshot">
+
+  <div class="skills">
+    <strong>Demonstrated Skills:</strong>
+    <span data-tooltip="Tagging and labeling images for ML dataset training.">Data Annotation</span>
+    <span data-tooltip="Leveraging Roboflow for annotation and dataset management.">Roboflow</span>
+    <span data-tooltip="Training object detection models like YOLOv5 and YOLOv8.">YOLO Integration</span>
+    <span data-tooltip="Ensuring dataset accuracy through systematic checks.">Quality Assurance</span>
+    <span data-tooltip="Training of accurate and precise AI models capable of real world application.">AI Model Training</span>
+  </div>
+</section>
+
+    <!-- PROJECT 3-->
+<section id="rfautoencoder" class="card project">
+  <div style="display:flex; justify-content:center; align-items:center; margin:16px 0;">
+    <img src="./Autoencoder.png" alt="AI Autoencoder Project Logo" class="logo-centered">
+  </div>
+
+  <h3>AI Autoencoder RF Anomaly Detection (Work in progress)</h3>
+  <p>
+    Built a deep learning-based anomaly detection model using an autoencoder trained on radio-frequency (RF) signal data.
+    This project explores how neural compression and reconstruction error can identify unusual RF spectrum patterns, 
+    a technique useful for detecting potential drone or interference activity in noisy environments.
+  </p>
+
+  <div class="buttons">
+    <a class="btn" href="./AI_Autoencoder_RF_Anomaly_Detection_Key_Takeaways.pdf" target="_blank" rel="noopener">Project Notes (Placeholder)</a>
+    <a class="btn secondary" href="https://github.com/ProjectsforTim/AI_RF_Anomaly_Autoencoder" target="_blank" rel="noopener">View Source (Placeholder)</a>
+  </div>
+
+  <img class="screenshot visible" id="autoencoderScreenshot" src="./RF_Anomaly_Heatmap2.png" alt="Autoencoder anomaly detection heatmap screenshot">
+<p class="caption">As expected, the autoencoder correctly identifies most abnormal signals; however, some anomalies still slip below the detection threshold, while a few normal signals are falsely flagged as outliers.</p>
+ <p>
+  This chart visualises how the AI model learns to tell apart normal and abnormal radio activity.
+Each bar represents how well the model was able to reconstruct a signal it was shown.
+Signals from known, “normal” sources (green) produce very low reconstruction error, meaning the model easily recognises them.
+Signals it hasn’t seen before, such as interference or new transmissions (orange) show much higher reconstruction error, crossing the dashed threshold line.
+That line marks the point where the system automatically flags an anomaly in the RF spectrum, allowing potential drone or jammer activity to be detected in real time.
+  </p>
+<h4 class="subhead">RF Spectrum Patterns Used to Train the Baseline Model</h4>
+<div class="pattern-grid">
+  <figure>
+    <img class="screenshot visible" id="rfPatternNormal" src="./try3.png"
+         alt="Baseline RF spectrograms used for training (normal patterns)">
+    <figcaption class="caption">Baseline/normal RF patterns (used to form the autoencoder’s reconstruction baseline).</figcaption>
+  </figure>
+  <figure>
+    <img class="screenshot visible" id="rfPatternAnom" src="./try2.png"
+         alt="Alternative RF spectrograms used for training (varied patterns)">
+    <figcaption class="caption">Varied RF patterns to improve generalisation and reduce false positives.</figcaption>
+  </figure>
+</div>
+  <strong>Anomalous Signal Examples Used After Training</strong>
+  <img class="screenshot visible small-screenshot" id="rfAnomalousExample" src="./try.png" alt="Anomalous RF signal example used to test the model">
+  <p class="caption">Highly anomalous RF signals fed to the autoencoder after training. The idea was for most of these signals to sit over the thresho9ld line toward the right of the chart.</p>
+<details class="performance-details">
+  <summary>📶 Interpreting These Signals</summary>
+  <div class="metrics">
+    <p>
+      <b>Frequency:</b> Represents how often the signal oscillates. In RF analysis, this determines the signal’s carrier band (e.g., 2.4 GHz or 5.8 GHz).<br>
+      <b>Time:</b> Displays how the signal evolves or changes over time, revealing bursts, modulations, or patterns of transmission activity.<br>
+      <b>Power:</b> Indicates the signal’s strength or amplitude in decibels (dB), showing how intense the transmission is within a given band.
+    </p>
+  </div>
+</details>
+  <div class="skills">
+    <strong>Demonstrated Skills:</strong>
+    <span data-tooltip="Training neural networks for unsupervised learning tasks.">Autoencoders</span>
+    <span data-tooltip="Detecting anomalies through reconstruction error analysis.">Anomaly Detection</span>
+    <span data-tooltip="Working with radio-frequency time-series datasets.">RF Signal Analysis</span>
+    <span data-tooltip="Implementing models in TensorFlow/PyTorch frameworks.">Deep Learning</span>
+    <span data-tooltip="Visualizing anomalies with custom heatmaps.">Data Visualization</span>
+  </div>
+</section>
+
+<!-- PROJECT 4 -->
+    <section id="sqldatabase" class="card project">
+  <div style="display:flex; justify-content:center; align-items:center; margin:16px 0;">
+    <img src="./SQLephant.png" alt="SQL Project Logo" class="logo-centered">
+  </div>
+
+  <h3>SQL Training Database Project</h3>
+  <p>
+    Demonstrating the knowledge gained from earlier formal SQL education.  
+    This fully functional SQL database for a company to train their workforce on has been tested with both beginner and advanced queries to ensure full functionality.  
+    Ready-to-use synthesised drone retailer dataset along with table seeding commands showcased in the SQL file.
+  </p>
+
+  <div class="buttons">
+    <a class="btn" href="./SQL_Database_Key_Takeaways.pdf" target="_blank" rel="noopener">Project Notes</a>
+    <a class="btn secondary" href="./training_db_drone_retailer_project.sql" target="_blank" rel="noopener">Download the Database</a>
+  </div>
+
+  <img class="screenshot visible" id="sqlDatabaseScreenshot" src="./Advanced_query_test.png" alt="SQL Database screenshot">
+  <p class="caption">Example query showing full functionality of the database.</p>
+  <div class="skills">
+    <strong>Demonstrated Skills:</strong>
+    <span data-tooltip="Designing and normalizing relational database structures.">Database Design</span>
+    <span data-tooltip="Crafting SQL statements to extract, join, and analyze data.">SQL Querying</span>
+    <span data-tooltip="Creating and seeding realistic synthetic datasets.">Data Generation</span>
+    <span data-tooltip="Testing joins, filters, and aggregates for correctness.">Query Validation</span>
+    <span data-tooltip="Applying database logic to real-world retail use cases.">Practical Data Application</span>
+  </div>
+</section>
+
+    <!-- PROJECT 5 -->
+    <section id="marketinfo" class="card project">
+      <div style="display:flex; justify-content:center; align-items:center; margin:16px 0;">
+    <img src="./Colablogo.png" alt="Colab logoo" class="logo">
+  </div>
+      <h3>Market-Sensitive Information Automation Daily Email</h3>
+      <p>
+        An automated daily news delivery system built in Google Colab that fetches
+        and emails the latest market-relevant and business-sensitive news using Google API,
+        Python, and a lightweight email dispatch routine. Designed to streamline
+        intelligence monitoring for subscribed users.
+      </p>
       <div class="buttons">
-        <a class="btn" href="https://github.com/ProjectsforTim/DataAnnotation" target="_blank">View Source</a>
-        <a class="btn" href="./Annotation_Project_Report.pdf" target="_blank">Project Report</a>
+        <a class="btn" href="https://colab.research.google.com/drive/1QJ9fHPLVOewKA4MGhOEiHEcKxARRBJLy" target="_blank" rel="noopener">
+          Open Colab Notebook
+        </a>
       </div>
-      <img class="screenshot" src="./mAPV2.png" alt="Drone annotation results graph">
+
+      <div class="skills">
+        <strong>Demonstrated Skills:</strong>
+        <span data-tooltip="Designing prompts for summarizing and extracting key information.">Prompt Engineering</span>
+        <span data-tooltip="Creating hands-off workflows for information delivery.">Automation</span>
+        <span data-tooltip="Developing and executing notebooks in Google Colab.">Google Colab</span>
+        <span data-tooltip="Integrating Gmail/Google APIs for automated email sending.">Email API Integration</span>
+        <span data-tooltip="Developing lightweight Python scripts for task automation.">Python Scripting</span>
+      </div>
     </section>
 
-    <!-- 3️⃣ RF Autoencoder -->
-    <section class="card project scene" id="rfautoencoder">
-      <h3>RF Autoencoder — Spectrum Anomaly Detection</h3>
-      <p>Prototype unsupervised anomaly detection on simulated RF spectral data using an autoencoder architecture to identify drone-like signal bursts.</p>
+    <!-- PROJECT 6 -->
+    <section id="customersolutions" class="card project">
+       <div style="display:flex; justify-content:center; align-items:center; margin:16px 0;">
+    <img src="./Confluencelogo.png" alt="Confluence logo" class="logo-centered">
+          </div>
+      <h3>Scaling Customer Solutions Knowledge Base</h3>
+      <p>
+        A strategic project proposal outlining how a defence technology company could scale its
+        customer service operations using a structured Knowledge Base and SOP framework.
+        The document demonstrates the design of tiered enquiry systems, verification flows,
+        and escalation protocols to support future team growth.
+      </p>
       <div class="buttons">
-        <a class="btn secondary" href="https://github.com/ProjectsforTim/RF-Autoencoder" target="_blank">View Source</a>
+        <a class="btn" href="./Scaling Customer Solutions SOPs and Knowledge Base.pdf" target="_blank" rel="noopener">
+          View Full Document (PDF)
+        </a>
       </div>
-      <img class="screenshot" src="./rf_autoencoder.png" alt="RF Autoencoder example output">
+      <details style="margin-top:18px;">
+        <summary style="cursor:pointer;font-weight:600;color:#ffbb55;padding:8px 0;">📄 Preview Document</summary>
+        <div style="margin-top:10px;">
+          <iframe
+            src="./Scaling Customer Solutions SOPs and Knowledge Base.pdf#view=FitH"
+            width="100%" height="500px"
+            style="border-radius:12px; box-shadow:0 0 25px rgba(255,122,0,0.4); border:none;"></iframe>
+        </div>
+      </details>
+
+      <div class="skills">
+        <strong>Demonstrated Skills:</strong>
+        <span data-tooltip="Creating structured documents that guide operational workflows.">Process Documentation</span>
+        <span data-tooltip="Designing accessible repositories of organisational knowledge.">Knowledge Management</span>
+        <span data-tooltip="Developing and maintaining procedural documentation.">Standard Operating Procedures</span>
+        <span data-tooltip="Structuring scalable workflows and communication channels.">Organisational Design</span>
+      </div>
     </section>
 
-    <!-- 4️⃣ SQL Training Database -->
-    <section class="card project scene" id="sqldatabase">
-      <h3>SQL Training Database — Drone Retail Dataset</h3>
-      <p>Structured PostgreSQL database for drone sales and customer transactions. Includes multi-table joins, aggregations, and analytics queries.</p>
+    <!-- PROJECT 7 -->
+    <section id="dispatchingtool" class="card project">
+      <h3>Dispatching Automation and Compliance Standardisation</h3>
+      <p>
+        A simple yet highly instrumental Excel-based tool that standardised and automated the dispatch note-taking process for operations staff.
+        It rearranged and concatenated operational data for compliance-ready note formats, eliminating manual data entry and improving efficiency by over 60%.
+      </p>
+
       <div class="buttons">
-        <a class="btn" href="https://github.com/ProjectsforTim/SQL-Training-Database" target="_blank">View Source</a>
-        <a class="btn" href="./SQL_Project_Report.pdf" target="_blank">Project Report</a>
+        <a class="btn" href="./Dispatching_Automation_Tool.xlsx" target="_blank" rel="noopener">
+          Open Excel File
+        </a>
       </div>
-      <img class="screenshot" src="./SQL_dashboard.png" alt="SQL database example output">
-    </section>
 
-    <!-- 5️⃣ Market Email Automation -->
-    <section class="card project scene" id="marketinfo">
-      <h3>Market Information Email Automation</h3>
-      <p>Automated daily news collection and email distribution tool built with Python and Gmail API. Fetches AI-related business headlines and sends summary digests.</p>
-      <div class="buttons">
-        <a class="btn secondary" href="https://github.com/ProjectsforTim/Email-Automation" target="_blank">View Source</a>
+      <details style="margin-top:18px;">
+        <summary style="cursor:pointer;font-weight:600;color:#ffbb55;padding:8px 0;">📊 Preview Spreadsheet</summary>
+        <div style="margin-top:10px;">
+          <iframe
+            src="https://view.officeapps.live.com/op/embed.aspx?src=https%3A%2F%2Fprojectsfortim.github.io%2Fportfolio%2FDispatching_Automation_Tool.xlsx"
+            width="100%" height="500px"
+            style="border-radius:12px; box-shadow:0 0 25px rgba(255,122,0,0.4); border:none;"></iframe>
+        </div>
+      </details>
+
+      <div class="skills">
+        <strong>Demonstrated Skills:</strong>
+        <span data-tooltip="Automating Excel processes for speed and consistency.">Excel Automation</span>
+        <span data-tooltip="Reformatting and concatenating data efficiently.">Data Transformation</span>
+        <span data-tooltip="Ensuring operational consistency and compliance in processes.">Compliance Design</span>
+        <span data-tooltip="Reducing manual data handling through smart templates.">Operational Efficiency</span>
+        <span data-tooltip="Streamlining multi-step manual workflows.">Workflow Optimization</span>
       </div>
-      <img class="screenshot" src="./marketemail.png" alt="Market email automation example">
     </section>
 
-    <!-- 6️⃣ Customer Solutions KB -->
-    <section class="card project scene" id="customersolutions">
-      <h3>Customer Solutions Knowledge Base</h3>
-      <p>Defence-aligned Confluence-style documentation system designed for scaling customer support workflows and tiered enquiry structures.</p>
-      <div class="buttons">
-        <a class="btn" href="./Customer_Solutions_KB.pdf" target="_blank">View KB Overview</a>
-      </div>
-      <img class="screenshot" src="./knowledgebase.png" alt="Customer Solutions Knowledge Base preview">
+    <!-- PROJECT 8 -->
+    <section id="rfenvironment" class="card project">
+  <h3>RF Environment Simulation with Counter-UAS Scenario (next in the pipeline)</h3>
+  <p>
+    Simulation attempt of multiple emitters (Wi-Fi, BLE, drone links) to create synthetic RF spectra over time.  
+    Visualises when a detection system could flag a drone signal within complex, noisy environments.
+  </p>
+</section>
+
+    <!-- PROJECT 9 -->
+    <section id="dataanalysis" class="card project">
+      <h3>Data Analysis on Customer Operations (coming soon)</h3>
+      <p>
+        A showcase of transforming raw data into clear business metrics and visual insights.  
+        This project demonstrates identifying key operational patterns and hidden issues using advanced Excel analysis and visualisation techniques.
+      </p>
     </section>
 
-    <!-- 7️⃣ Dispatching Tool -->
-    <section class="card project scene" id="dispatchingtool">
-      <h3>Dispatching Automation Tool</h3>
-      <p>Python prototype for automated task dispatching and assignment logic, inspired by real-world logistics optimisation challenges.</p>
-      <div class="buttons">
-        <a class="btn secondary" href="https://github.com/ProjectsforTim/Dispatching-Tool" target="_blank">View Source</a>
-      </div>
-      <img class="screenshot" src="./dispatch_tool.png" alt="Dispatching automation UI mockup">
+    <!-- PROJECT 10 -->
+    <section id="salesflier" class="card project">
+      <h3>High Impact Flier for Sales or Marketing (coming soon)</h3>
+      <p>
+        A striking one-page flier concept designed for counter-UAS solution providers, highlighting the civilian drone challenge and delivering a concise, persuasive call to action.
+      </p>
     </section>
 
-    <!-- 8️⃣ RF Environment Simulation -->
-    <section class="card project scene" id="rfenvironment">
-      <h3>RF Environment Simulation (In Progress)</h3>
-      <p>Simulated multi-emitter RF spectrum (Wi-Fi, BLE, drone control links) for C-UAS research. Uses signal synthesis and threshold detection to identify drone-like patterns.</p>
-      <div class="buttons">
-        <a class="btn secondary" href="https://github.com/ProjectsforTim/RF-Environment-Simulation" target="_blank">View Source</a>
-      </div>
-      <img class="screenshot" src="./rf_environment.png" alt="RF Environment Simulation concept">
-    </section>
+    <!-- CONTACT -->
+    <section style="text-align:center; margin-top:40px;">
+      <a class="linkedin-btn" href="https://www.linkedin.com/in/timothy-lonergan-2b6156197" target="_blank" rel="noopener">
+        Connect on LinkedIn
+      </a>
+      </section>
 
-    <!-- 9️⃣ Data Analysis -->
-    <section class="card project scene" id="dataanalysis">
-      <h3>Data Analysis — AI Metrics & Visualisation</h3>
-      <p>Exploratory data visualisation project analysing model precision, recall, and long-range detection performance. Includes DroneShield Graph Style V2 metrics charts.</p>
-      <img class="screenshot" src="./data_analysis.png" alt="Data analysis example output">
-    </section>
-
-    <!-- 🔟 Sales / Marketing Flier -->
-    <section class="card project scene" id="salesflier">
-      <h3>Sales / Marketing Flier — Counter-UAS Solutions</h3>
-      <p>One-page concept designed in Figma, highlighting the civilian drone challenge and promoting counter-UAS capabilities to defence clients.</p>
-      <div class="buttons">
-        <a class="btn" href="./CounterUAS_Flier.pdf" target="_blank">View PDF</a>
-      </div>
-      <img class="screenshot" src="./flier_preview.png" alt="Counter-UAS marketing flier preview">
-    </section>
-
-    <section style="text-align:center;margin-top:40px;" class="scene">
-      <a class="linkedin-btn" href="https://www.linkedin.com/in/timothy-lonergan-2b6156197" target="_blank">Connect on LinkedIn</a>
-    </section>
-    <footer class="muted scene">© 2025 Timothy Lonergan | AI & Automation Portfolio</footer>
-  </main>
+  <footer class="muted">© 2025 Timothy Lonergan | AI & Automation Portfolio</footer>
+</main>
 
   <script src="assets/js/main.js" defer></script>
 </body>
