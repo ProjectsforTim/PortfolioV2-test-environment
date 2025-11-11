@@ -1,57 +1,74 @@
 /* ===============================
-   PHASE 1 SCRIPT BASELINE
+   PHASE 2 CINEMATIC FRAMEWORK
    =============================== */
 
-// Fade-in for screenshots
-const screenshots = document.querySelectorAll('.screenshot');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('visible');
-  });
-}, { threshold: 0.25 });
-screenshots.forEach(img => observer.observe(img));
+// 1️⃣ LENIS Smooth Scroll
+const lenis = new Lenis({
+  duration: 1.3,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  smooth: true,
+});
+function raf(time){
+  lenis.raf(time);
+  requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
 
-// Tooltip fallback
-document.querySelectorAll('.skills span').forEach(span => {
-  if (!span.dataset.tooltip || span.dataset.tooltip.trim() === '')
-    span.dataset.tooltip = span.textContent.trim();
+// 2️⃣ GSAP + ScrollTrigger setup
+gsap.registerPlugin(ScrollTrigger);
+
+// Animate each .scene section sequentially
+document.querySelectorAll(".scene").forEach((scene, i) => {
+  gsap.fromTo(scene,
+    {opacity:0, y:60},
+    {
+      opacity:1, y:0,
+      duration:1.2,
+      ease:"power3.out",
+      scrollTrigger:{
+        trigger: scene,
+        start:"top 80%",
+        toggleActions:"play none none reverse"
+      }
+    });
 });
 
-// Section highlight
+// Fade/slide for screenshots as extra polish
+document.querySelectorAll(".screenshot").forEach(img=>{
+  gsap.fromTo(img,
+    {opacity:0, y:30},
+    {
+      opacity:1, y:0,
+      duration:1,
+      ease:"power2.out",
+      scrollTrigger:{
+        trigger: img,
+        start:"top 85%",
+        toggleActions:"play none none reverse"
+      }
+    });
+});
+
+// 3️⃣ Highlight current section in nav
 const sections = [
   'dronechat','annotation','rfautoencoder','sqldatabase',
-  'marketinfo','customersolutions','dispatchingtool',
-  'rfenvironment','dataanalysis','salesflier'
+  'marketinfo','customersolutions','dispatchingtool'
 ];
 const linkById = id => document.getElementById('lnk-' + id);
-const highlightObserver = new IntersectionObserver((entries) => {
-  let best = null;
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      if (!best || entry.intersectionRatio > best.intersectionRatio) best = entry;
-    }
+sections.forEach(id=>{
+  const el=document.getElementById(id);
+  if(!el)return;
+  ScrollTrigger.create({
+    trigger:el,
+    start:"top center",
+    end:"bottom center",
+    onEnter:()=>highlight(id),
+    onEnterBack:()=>highlight(id)
   });
-  if (best) {
-    const id = best.target.id;
-    sections.forEach(s => {
-      const l = linkById(s);
-      if (l) l.classList.toggle('active', s === id);
-    });
-  }
-}, { root: null, threshold: [0.15,0.3,0.5,0.7,0.9], rootMargin: "0px 0px -30% 0px" });
-sections.forEach(id => {
-  const el = document.getElementById(id);
-  if (el) highlightObserver.observe(el);
 });
-window.addEventListener('load', () => {
-  const hash = location.hash.replace('#','');
-  if (sections.includes(hash)) {
-    sections.forEach(s => {
-      const l = linkById(s);
-      if (l) l.classList.toggle('active', s === hash);
-    });
-  }
-});
-
-/* Drone animation logic temporarily disabled for Phase 1 cleanup */
-
+function highlight(id){
+  sections.forEach(s=>{
+    const l=linkById(s);
+    if(l)l.classList.toggle('active',s===id);
+  });
+}
