@@ -72,3 +72,45 @@ function highlight(id){
     if(l)l.classList.toggle('active',s===id);
   });
 }
+/* ===============================
+   PHASE 3 PARALLAX + LIGHT LOGIC
+   =============================== */
+
+// --- Subtle parallax for Drone overlay ---
+const droneLayer = document.body;
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const offset = scrollY * 0.15; // subtle movement
+  droneLayer.style.setProperty('--drone-offset', `${offset}px`);
+});
+
+// Apply translate via CSS variable
+document.head.insertAdjacentHTML("beforeend", `
+  <style>
+    body::before { transform: translateY(calc(var(--drone-offset, 0) * -1)); }
+  </style>
+`);
+
+// --- Scroll-linked ambient lighting ---
+gsap.to("body::after", {
+  scrollTrigger: {
+    trigger: "body",
+    start: "top top",
+    end: "bottom bottom",
+    scrub: 1
+  },
+  backgroundPosition: "50% 60%",
+  ease: "none"
+});
+
+// --- Card focus lift ---
+document.querySelectorAll(".card").forEach(card => {
+  ScrollTrigger.create({
+    trigger: card,
+    start: "top 70%",
+    end: "bottom 30%",
+    onEnter: () => card.classList.add("active"),
+    onLeaveBack: () => card.classList.remove("active")
+  });
+});
+
