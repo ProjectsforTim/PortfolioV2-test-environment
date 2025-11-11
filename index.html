@@ -18,19 +18,22 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
 </head>
-<!-- ✨ Cinematic Intro Overlay -->
-<div id="intro-overlay">
-  <div class="intro-content">
-    <h1 class="intro-title">Timothy Lonergan</h1>
-    <p class="intro-sub">AI & Automation Portfolio</p>
-  </div>
-</div>
 
-<!-- Drone elements -->
-<div class="drone main-drone"></div>
-<div class="drone follower-drone"></div>
-<div class="drone secondary-drone"></div>
 <body>
+  <!-- ✨ Cinematic Intro Overlay -->
+  <div id="intro-overlay">
+    <div class="intro-content">
+      <h1 class="intro-title">Timothy Lonergan</h1>
+      <p class="intro-sub">AI & Automation Portfolio</p>
+    </div>
+  </div>
+
+  <!-- Drone elements -->
+  <div class="drone main-drone"></div>
+  <div class="drone follower-drone"></div>
+  <div class="drone secondary-drone"></div>
+
+  <!-- Navigation -->
   <nav class="project-nav">
     <h4>Projects</h4>
     <a href="#dronechat" id="lnk-dronechat">DroneShield Chatbot</a>
@@ -47,22 +50,25 @@
 
   <main class="wrap">
     <h1 class="scene">Timothy Lonergan — AI & Automation Portfolio</h1>
-   <p class="subtitle">Projects showcasing automation, AI integration, and applied problem solving.</p>
+    <p class="subtitle">Projects showcasing automation, AI integration, and applied problem solving.</p>
 
     <!-- ABOUT -->
-    <section class="card">
+    <section class="card scene">
       <h2>About Me</h2>
       <p>
-      I’m an AI and automation enthusiast with a background in customer operations management,
+        I’m an AI and automation enthusiast with a background in customer operations management,
         process design, data analysis, and workforce management. I focus on building intelligent tools
         that improve efficiency, accuracy, and access to knowledge. This portfolio highlights my
         transition into AI through applied projects like autonomous chatbots, data annotation pipelines,
-        and real-time information retrieval systems. These projects were largely inspired by the C-UAS space which I have been quietly following for over 5 years.
+        and real-time information retrieval systems. These projects were largely inspired by the C-UAS space
+        which I have been quietly following for over 5 years.
       </p>
     </section>
 
+    <!-- All project cards below -->
+    <!-- (unchanged content from your previous version — kept exactly as you posted) -->
     <!-- PROJECT 1 -->
-    <section id="dronechat" class="card project">
+    <section id="dronechat" class="card project scene">
       <div style="display:flex; justify-content:center; align-items:center; margin:16px 0;">
         <img src="./droneshield_logo.png" alt="DroneShield Logo" class="logo-centered">
       </div>
@@ -103,7 +109,8 @@
         <span data-tooltip="Connecting OpenAI APIs for text and reasoning workflows.">OpenAI API Integration</span>
       </div>
     </section>
-       <!-- PROJECT 2 -->
+
+  <!-- PROJECT 2 -->
     <section id="annotation" class="card project">
   <div style="display:flex; justify-content:center; align-items:center; margin:16px 0;">
     <img src="./Robologo.png" alt="Roboflow Logo" class="logo">
@@ -379,10 +386,10 @@ That line marks the point where the system automatically flags an anomaly in the
       <a class="linkedin-btn" href="https://www.linkedin.com/in/timothy-lonergan-2b6156197" target="_blank" rel="noopener">
         Connect on LinkedIn
       </a>
-      </section>
+    </section>
 
-  <footer class="muted">© 2025 Timothy Lonergan | AI & Automation Portfolio</footer>
-</main>
+    <footer class="muted">© 2025 Timothy Lonergan | AI & Automation Portfolio</footer>
+  </main>
 
   <script src="assets/js/main.js" defer></script>
 </body>
