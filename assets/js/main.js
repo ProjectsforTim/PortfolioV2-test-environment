@@ -121,9 +121,9 @@ window.addEventListener("load", () => {
   const intro = gsap.timeline();
 
   intro
-    // fade from black
-    .to("#intro-overlay", { opacity: 1, duration: 0 })
-    .to("#intro-overlay", { opacity: 1, duration: 0.2 })
+    intro
+  .set("#intro-overlay", { opacity: 1, display: "flex" }) // force it visible
+  .fromTo("#intro-overlay", { opacity: 0 }, { opacity: 1, duration: 0.6, ease: "power2.out" })
     // show title / subtitle
     .to(".intro-title", { opacity: 1, y: -10, duration: 1.2, ease: "power2.out" })
     .to(".intro-sub", { opacity: 1, y: -5, duration: 1.0, ease: "power2.out" }, "-=0.5")
