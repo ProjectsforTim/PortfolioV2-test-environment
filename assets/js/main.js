@@ -113,4 +113,30 @@ document.querySelectorAll(".card").forEach(card => {
     onLeaveBack: () => card.classList.remove("active")
   });
 });
+/* ===============================
+   PHASE 4 — INTRO + DRONES
+   =============================== */
+
+window.addEventListener("load", () => {
+  const intro = gsap.timeline();
+
+  intro
+    // fade from black
+    .to("#intro-overlay", { opacity: 1, duration: 0 })
+    .to("#intro-overlay", { opacity: 1, duration: 0.2 })
+    // show title / subtitle
+    .to(".intro-title", { opacity: 1, y: -10, duration: 1.2, ease: "power2.out" })
+    .to(".intro-sub", { opacity: 1, y: -5, duration: 1.0, ease: "power2.out" }, "-=0.5")
+    // fade out overlay
+    .to("#intro-overlay", { opacity: 0, duration: 1.2, delay: 0.6, ease: "power1.inOut" })
+    .set("#intro-overlay", { display: "none" });
+
+  // Drone entrance
+  const droneTL = gsap.timeline({ delay: 3 });
+  droneTL
+    .to(".drone", { opacity: 1, duration: 1.2, stagger: 0.3, ease: "power2.out" })
+    .to(".main-drone", { y: -20, repeat: -1, yoyo: true, duration: 4, ease: "sine.inOut" })
+    .to(".follower-drone", { x: 15, y: 10, repeat: -1, yoyo: true, duration: 5, ease: "sine.inOut" }, "<")
+    .to(".secondary-drone", { x: -12, y: -15, repeat: -1, yoyo: true, duration: 6, ease: "sine.inOut" }, "<");
+});
 
