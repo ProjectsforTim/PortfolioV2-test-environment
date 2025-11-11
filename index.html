@@ -71,7 +71,7 @@
     <!-- PROJECT 1 -->
     <section id="dronechat" class="card project scene">
       <div style="display:flex; justify-content:center; align-items:center; margin:16px 0;">
-        <img src="./droneshield_logo.png" alt="DroneShield Logo" class="logo-centered">
+        <img src="assets/img/droneshield_logo.png" alt="DroneShield Logo" class="logo-centered">
       </div>
       <style>
         .logo-centered { height: 50px; filter: drop-shadow(0 0 25px rgba(255,122,0,0.7)); transition: all 0.4s ease-in-out; }
@@ -89,7 +89,7 @@
         <a class="btn secondary" href="https://github.com/ProjectsforTim/Chatbot" target="_blank" rel="noopener">View Source</a>
       </div>
 
-      <img class="screenshot" id="chatbotDemo" src="./chatbotdemo.png" alt="DroneShield Chat demo screenshot">
+      <img class="screenshot" id="chatbotDemo" src="assets/img/chatbotdemo.png" alt="DroneShield Chat demo screenshot">
 
       <details style="margin-top:18px;">
         <summary style="cursor:pointer;font-weight:600;color:#ffbb55;padding:8px 0;">📄 Preview Project Notes PDF</summary>
@@ -114,7 +114,7 @@
     <!-- PROJECT 2 -->
     <section id="annotation" class="card project scene">
       <div style="display:flex; justify-content:center; align-items:center; margin:16px 0;">
-        <img src="./Robologo.png" alt="Roboflow Logo" class="logo">
+        <img src="assets/img/Robologo.png" alt="Roboflow Logo" class="logo">
       </div>
       <h3>AI Data Annotation and Object Detection Model V2</h3>
       <p>
@@ -127,16 +127,16 @@
         <a class="btn secondary" href="https://github.com/ProjectsforTim/Drone_Threat_Detection_V1" target="_blank">Source (V1)</a>
         <a class="btn secondary" href="https://github.com/ProjectsforTim/Drone_Threat_Detection_V2" target="_blank">Source (V2)</a>
       </div>
-      <img class="screenshot" src="./MAPV1vsV2.png" alt="mAP Comparison">
-      <img class="screenshot" src="./MAPV2.png" alt="V2 Results">
-      <img class="screenshot" src="./mAP0.5.png" alt="V1 Results">
-      <img class="screenshot" src="./Drone_Annotation.png" alt="Annotation Demo">
+      <img class="screenshot" src="assets/img/MAPV1vsV2.png" alt="mAP Comparison">
+      <img class="screenshot" src="assets/img/MAPV2.png" alt="V2 Results">
+      <img class="screenshot" src="assets/img/mAP0.5.png" alt="V1 Results">
+      <img class="screenshot" src="assets/img/Drone_Annotation.png" alt="Annotation Demo">
     </section>
 
     <!-- PROJECT 3 -->
     <section id="rfautoencoder" class="card project scene">
       <div style="display:flex; justify-content:center; align-items:center; margin:16px 0;">
-        <img src="./Autoencoder.png" alt="AI Autoencoder Project Logo" class="logo-centered">
+        <img src="assets/img/Autoencoder.png" alt="AI Autoencoder Project Logo" class="logo-centered">
       </div>
       <h3>AI Autoencoder RF Anomaly Detection (WIP)</h3>
       <p>
@@ -147,12 +147,12 @@
         <a class="btn" href="./AI_Autoencoder_RF_Anomaly_Detection_Key_Takeaways.pdf" target="_blank">Project Notes</a>
         <a class="btn secondary" href="https://github.com/ProjectsforTim/AI_RF_Anomaly_Autoencoder" target="_blank">Source</a>
       </div>
-      <img class="screenshot" src="./RF_Anomaly_Heatmap2.png" alt="RF Heatmap">
+      <img class="screenshot" src="assets/img/RF_Anomaly_Heatmap2.png" alt="RF Heatmap">
     </section>
 
     <!-- PROJECT 4 -->
     <section id="sqldatabase" class="card project scene">
-      <img src="./SQLephant.png" alt="SQL Project Logo" class="logo-centered">
+      <img src="assets/img/SQLephant.png" alt="SQL Project Logo" class="logo-centered">
       <h3>SQL Training Database Project</h3>
       <p>
         Fully functional SQL database simulating a drone retailer environment with both beginner and advanced queries.
@@ -161,12 +161,12 @@
         <a class="btn" href="./SQL_Database_Key_Takeaways.pdf" target="_blank">Project Notes</a>
         <a class="btn secondary" href="./training_db_drone_retailer_project.sql" target="_blank">Download SQL</a>
       </div>
-      <img class="screenshot" src="./Advanced_query_test.png" alt="SQL Screenshot">
+      <img class="screenshot" src="assets/img/Advanced_query_test.png" alt="SQL Screenshot">
     </section>
 
     <!-- PROJECT 5 -->
     <section id="marketinfo" class="card project scene">
-      <img src="./Colablogo.png" alt="Colab Logo" class="logo">
+      <img src="assets/img/Colablogo.png" alt="Colab Logo" class="logo">
       <h3>Market-Sensitive Information Automation Daily Email</h3>
       <p>
         Automated daily news delivery built in Google Colab using Google API + Python.
@@ -178,7 +178,7 @@
 
     <!-- PROJECT 6 -->
     <section id="customersolutions" class="card project scene">
-      <img src="./Confluencelogo.png" alt="Confluence Logo" class="logo-centered">
+      <img src="assets/img/Confluencelogo.png" alt="Confluence Logo" class="logo-centered">
       <h3>Scaling Customer Solutions Knowledge Base</h3>
       <p>
         SOP framework proposal for scaling defence customer service operations.
@@ -247,28 +247,30 @@
         opacity: 0.7, duration: 1.4, delay: 3.4, ease: "power2.out"
       });
     });
-    <script>
-(function () {
-  const fallbackBase = "https://projectsfortim.github.io/portfolio/";
+  </script>
 
-  // Fallback images: if a local img fails, point to old site
-  document.querySelectorAll('img[src^="./"]').forEach(img => {
-    const file = img.getAttribute("src").replace("./", "");
-    img.addEventListener("error", () => {
-      img.src = fallbackBase + file;
-    }, { once: true });
-  });
+  <script>
+  (function () {
+    const fallbackBase = "https://projectsfortim.github.io/portfolio/";
 
-  // Proactively point doc links & preview iframes to old site
-  const docExt = [".pdf", ".xlsx", ".sql"];
-  document.querySelectorAll('a[href^="./"], iframe[src^="./"]').forEach(el => {
-    const attr = el.tagName === "IFRAME" ? "src" : "href";
-    const val = el.getAttribute(attr);
-    if (docExt.some(ext => val.toLowerCase().endsWith(ext))) {
-      el.setAttribute(attr, fallbackBase + val.replace("./", ""));
-    }
-  });
-})();
+    // Fallback images: if a local img fails, point to old site
+    document.querySelectorAll('img[src^="./"]').forEach(img => {
+      const file = img.getAttribute("src").replace("./", "");
+      img.addEventListener("error", () => {
+        img.src = fallbackBase + file;
+      }, { once: true });
+    });
+
+    // Proactively point doc links & preview iframes to old site
+    const docExt = [".pdf", ".xlsx", ".sql"];
+    document.querySelectorAll('a[href^="./"], iframe[src^="./"]').forEach(el => {
+      const attr = el.tagName === "IFRAME" ? "src" : "href";
+      const val = el.getAttribute(attr);
+      if (docExt.some(ext => val.toLowerCase().endsWith(ext))) {
+        el.setAttribute(attr, fallbackBase + val.replace("./", ""));
+      }
+    });
+  })();
   </script>
 </body>
 </html>
