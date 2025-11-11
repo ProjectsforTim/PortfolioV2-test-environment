@@ -13,7 +13,7 @@
   <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <!-- ✨ Phase 2 Animation Libraries -->
+  <!-- ✨ Cinematic Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
@@ -25,19 +25,23 @@
     <a href="#dronechat" id="lnk-dronechat">DroneShield Chatbot</a>
     <a href="#annotation" id="lnk-annotation">AI Data Annotation</a>
     <a href="#rfautoencoder" id="lnk-rfautoencoder">RF Autoencoder</a>
-    <a href="#sqldatabase" id="lnk-sqldatabase">SQL DB</a>
-    <a href="#marketinfo" id="lnk-marketinfo">Market Automation</a>
-    <a href="#customersolutions" id="lnk-customersolutions">Customer Solutions</a>
+    <a href="#sqldatabase" id="lnk-sqldatabase">SQL Database</a>
+    <a href="#marketinfo" id="lnk-marketinfo">Market Email Automation</a>
+    <a href="#customersolutions" id="lnk-customersolutions">Customer Solutions KB</a>
     <a href="#dispatchingtool" id="lnk-dispatchingtool">Dispatching Tool</a>
+    <a href="#rfenvironment" id="lnk-rfenvironment">RF Environment Simulation</a>
+    <a href="#dataanalysis" id="lnk-dataanalysis">Data Analysis</a>
+    <a href="#salesflier" id="lnk-salesflier">Sales / Marketing Flier</a>
   </nav>
 
   <main class="wrap">
     <h1 class="scene">Timothy Lonergan — AI & Automation Portfolio</h1>
     <p class="subtitle scene">Projects showcasing automation, AI integration, and applied problem solving.</p>
 
+    <!-- 1️⃣ DroneShield Chatbot -->
     <section class="card project scene" id="dronechat">
       <h3>DroneShield AI Chatbot</h3>
-      <p>Custom chatbot leveraging OpenAI GPT-4 and retrieval logic to answer company-specific questions from DroneShield’s public website.</p>
+      <p>Custom GPT-4 chatbot trained on DroneShield’s website to answer company-specific product and capability questions.</p>
       <div class="buttons">
         <a class="btn" href="https://tims-droneshield-chatbot.streamlit.app/" target="_blank">Open Live App</a>
         <a class="btn" href="./AI_Chatbot_Key_Takeaways.pdf" target="_blank">Project Notes</a>
@@ -46,7 +50,94 @@
       <img class="screenshot" src="./chatbotdemo.png" alt="DroneShield Chat demo">
     </section>
 
-    <!-- Add your other project <section class="card project scene" id="..."> blocks here -->
+    <!-- 2️⃣ AI Data Annotation -->
+    <section class="card project scene" id="annotation">
+      <h3>AI Data Annotation — Long-Range Drone Detection V2</h3>
+      <p>Manually labeled and augmented dataset of civilian UAV imagery for object detection model training. Trained with YOLOv8 achieving mAP@0.5 = 0.979 on 1,200 annotated images.</p>
+      <div class="buttons">
+        <a class="btn" href="https://github.com/ProjectsforTim/DataAnnotation" target="_blank">View Source</a>
+        <a class="btn" href="./Annotation_Project_Report.pdf" target="_blank">Project Report</a>
+      </div>
+      <img class="screenshot" src="./mAPV2.png" alt="Drone annotation results graph">
+    </section>
+
+    <!-- 3️⃣ RF Autoencoder -->
+    <section class="card project scene" id="rfautoencoder">
+      <h3>RF Autoencoder — Spectrum Anomaly Detection</h3>
+      <p>Prototype unsupervised anomaly detection on simulated RF spectral data using an autoencoder architecture to identify drone-like signal bursts.</p>
+      <div class="buttons">
+        <a class="btn secondary" href="https://github.com/ProjectsforTim/RF-Autoencoder" target="_blank">View Source</a>
+      </div>
+      <img class="screenshot" src="./rf_autoencoder.png" alt="RF Autoencoder example output">
+    </section>
+
+    <!-- 4️⃣ SQL Training Database -->
+    <section class="card project scene" id="sqldatabase">
+      <h3>SQL Training Database — Drone Retail Dataset</h3>
+      <p>Structured PostgreSQL database for drone sales and customer transactions. Includes multi-table joins, aggregations, and analytics queries.</p>
+      <div class="buttons">
+        <a class="btn" href="https://github.com/ProjectsforTim/SQL-Training-Database" target="_blank">View Source</a>
+        <a class="btn" href="./SQL_Project_Report.pdf" target="_blank">Project Report</a>
+      </div>
+      <img class="screenshot" src="./SQL_dashboard.png" alt="SQL database example output">
+    </section>
+
+    <!-- 5️⃣ Market Email Automation -->
+    <section class="card project scene" id="marketinfo">
+      <h3>Market Information Email Automation</h3>
+      <p>Automated daily news collection and email distribution tool built with Python and Gmail API. Fetches AI-related business headlines and sends summary digests.</p>
+      <div class="buttons">
+        <a class="btn secondary" href="https://github.com/ProjectsforTim/Email-Automation" target="_blank">View Source</a>
+      </div>
+      <img class="screenshot" src="./marketemail.png" alt="Market email automation example">
+    </section>
+
+    <!-- 6️⃣ Customer Solutions KB -->
+    <section class="card project scene" id="customersolutions">
+      <h3>Customer Solutions Knowledge Base</h3>
+      <p>Defence-aligned Confluence-style documentation system designed for scaling customer support workflows and tiered enquiry structures.</p>
+      <div class="buttons">
+        <a class="btn" href="./Customer_Solutions_KB.pdf" target="_blank">View KB Overview</a>
+      </div>
+      <img class="screenshot" src="./knowledgebase.png" alt="Customer Solutions Knowledge Base preview">
+    </section>
+
+    <!-- 7️⃣ Dispatching Tool -->
+    <section class="card project scene" id="dispatchingtool">
+      <h3>Dispatching Automation Tool</h3>
+      <p>Python prototype for automated task dispatching and assignment logic, inspired by real-world logistics optimisation challenges.</p>
+      <div class="buttons">
+        <a class="btn secondary" href="https://github.com/ProjectsforTim/Dispatching-Tool" target="_blank">View Source</a>
+      </div>
+      <img class="screenshot" src="./dispatch_tool.png" alt="Dispatching automation UI mockup">
+    </section>
+
+    <!-- 8️⃣ RF Environment Simulation -->
+    <section class="card project scene" id="rfenvironment">
+      <h3>RF Environment Simulation (In Progress)</h3>
+      <p>Simulated multi-emitter RF spectrum (Wi-Fi, BLE, drone control links) for C-UAS research. Uses signal synthesis and threshold detection to identify drone-like patterns.</p>
+      <div class="buttons">
+        <a class="btn secondary" href="https://github.com/ProjectsforTim/RF-Environment-Simulation" target="_blank">View Source</a>
+      </div>
+      <img class="screenshot" src="./rf_environment.png" alt="RF Environment Simulation concept">
+    </section>
+
+    <!-- 9️⃣ Data Analysis -->
+    <section class="card project scene" id="dataanalysis">
+      <h3>Data Analysis — AI Metrics & Visualisation</h3>
+      <p>Exploratory data visualisation project analysing model precision, recall, and long-range detection performance. Includes DroneShield Graph Style V2 metrics charts.</p>
+      <img class="screenshot" src="./data_analysis.png" alt="Data analysis example output">
+    </section>
+
+    <!-- 🔟 Sales / Marketing Flier -->
+    <section class="card project scene" id="salesflier">
+      <h3>Sales / Marketing Flier — Counter-UAS Solutions</h3>
+      <p>One-page concept designed in Figma, highlighting the civilian drone challenge and promoting counter-UAS capabilities to defence clients.</p>
+      <div class="buttons">
+        <a class="btn" href="./CounterUAS_Flier.pdf" target="_blank">View PDF</a>
+      </div>
+      <img class="screenshot" src="./flier_preview.png" alt="Counter-UAS marketing flier preview">
+    </section>
 
     <section style="text-align:center;margin-top:40px;" class="scene">
       <a class="linkedin-btn" href="https://www.linkedin.com/in/timothy-lonergan-2b6156197" target="_blank">Connect on LinkedIn</a>
